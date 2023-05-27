@@ -1,1 +1,229 @@
-print('hello')
+#ncb=nursing care burden
+#dnc=degree of nursing care
+#ndy=number of days in year
+#ndm=number of days in month
+#bc=Basic charge
+#bl=burden limit
+
+import calendar
+
+ncb=int(input("介護保健負担割合を入力してください: "))
+
+if ncb==1:
+    
+    a_1=772 #要介護1
+    a_2=854 #要介護2
+    a_3=942 #要介護3
+    a_4=1024#要介護4
+    a_5=1106#要介護5
+
+    b=21 #夜勤職員配置加算(Ⅱ)
+
+    c=56 #日常生活継続支援加算
+
+    d=15 #看護体系加算(Ⅰ)(Ⅱ)
+
+    e=35 #口腔衛生管理体制加算（月1回）
+
+    f=6 #精神科医療養指導加算
+
+    g=15 #個別機能訓練加算
+
+    h=17 #栄養マネジメント加算
+
+    i=12 #褥瘡マネジメント加算(3ヶ月に1回)
+
+    j=1549 #看取り介護加算(死亡日)
+
+    k=822 #看取り介護加算(死亡日以前2日または3日)
+
+    l=175 #看取り介護加算(死亡日以前4日以上30日以下)
+    
+    
+    
+    #介護度によって基本料金が変更する
+    options = ['772', '854', '942', '1024', '1106']  # 選択肢のリスト
+
+    selection = input("介護度を入力してください: ")
+
+    # 入力された値が有効な選択肢の範囲内かチェック
+    if selection.isdigit() and 1 <= int(selection) <= len(options):
+        selected_number = int(selection)
+        selected_option = int(options[selected_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+        
+
+
+    options_eating=['300', '390', '650', '1735']
+    bl = input('負担限度額を入力してください')
+    
+     # 入力された値が有効な選択肢の範囲内かチェック
+    if bl.isdigit() and 1 <= int(bl) <= len(options_eating):
+        bl_number = int(bl)
+        bl_option = int(options_eating[bl_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+
+    bllive = bl
+    options_living=['820', '820', '1310', '2415']
+    if bllive.isdigit() and 1 <= int(bllive) <= len(options_living):
+        bllive_number = int(bllive)
+        bllive_option = int(options_living[bllive_number - 1])
+    
+
+    ndy=int(input('計算したい年度'))
+    ndm=int(input('計算したい月'))
+    days=calendar.monthrange(ndy,ndm)[1]   
+    
+if ncb==2:
+    
+    #2割負担の場合
+    a2_1=772*2 #要介護1
+    a2_2=854*2 #要介護2
+    a2_3=942*2 #要介護3
+    a2_4=1024*2#要介護4
+    a2_5=1106*2#要介護5
+
+    b=21*2 #夜勤職員配置加算(Ⅱ)
+
+    c=56*2 #日常生活継続支援加算
+
+    d=15*2 #看護体系加算(Ⅰ)(Ⅱ)
+
+    e=35*2 #口腔衛生管理体制加算（月1回）
+
+    f=6*2 #精神科医療養指導加算
+
+    g=15*2 #個別機能訓練加算
+
+    h=17*2 #栄養マネジメント加算
+
+    i=12*2 #褥瘡マネジメント加算(3ヶ月に1回)
+
+    j=1549*2 #看取り介護加算(死亡日)
+
+    k=822*2 #看取り介護加算(死亡日以前2日または3日)
+
+    l=175*2 #看取り介護加算(死亡日以前4日以上30日以下)
+
+        #介護度によって基本料金が変更する  
+    options = [a2_1,a2_2,a2_3,a2_4,a2_5] # 選択肢のリスト
+
+    selection = input("介護度を入力してください: ")
+
+    # 入力された値が有効な選択肢の範囲内かチェック
+    if selection.isdigit() and 1 <= int(selection) <= len(options):
+        selected_number = int(selection)
+        selected_option = int(options[selected_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+        
+
+
+    options_eating=['300', '390', '650', '1735']
+    bl = input('負担限度額を入力してください')
+    
+     # 入力された値が有効な選択肢の範囲内かチェック
+    if bl.isdigit() and 1 <= int(bl) <= len(options_eating):
+        bl_number = int(bl)
+        bl_option = int(options_eating[bl_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+
+    bllive = bl
+    options_living=['820', '820', '1310', '2415']
+    if bllive.isdigit() and 1 <= int(bllive) <= len(options_living):
+        bllive_number = int(bllive)
+        bllive_option = int(options_living[bllive_number - 1])
+    
+
+    ndy=int(input('計算したい年度'))
+    ndm=int(input('計算したい月'))
+    days=calendar.monthrange(ndy,ndm)[1]
+    
+if ncb==3:
+    
+    #3割負担の場合
+    a3_1=772*3 #要介護1
+    a3_2=854*3 #要介護2
+    a3_3=942*3 #要介護3
+    a3_4=1024*3#要介護4
+    a3_5=1106*3#要介護5
+
+    b=21*3 #夜勤職員配置加算(Ⅱ)
+
+    c=56*3 #日常生活継続支援加算
+
+    d=15*3 #看護体系加算(Ⅰ)(Ⅱ)
+
+    e=35*3 #口腔衛生管理体制加算（月1回）
+
+    f=6*3  #精神科医療養指導加算
+
+    g=15*3 #個別機能訓練加算
+
+    h=17*3 #栄養マネジメント加算
+
+    i=12*3 #褥瘡マネジメント加算(3ヶ月に1回)
+
+    j=1549*3 #看取り介護加算(死亡日)
+
+    k=822*3 #看取り介護加算(死亡日以前2日または3日)
+
+    l=175*3 #看取り介護加算(死亡日以前4日以上30日以下)
+    
+    
+        #介護度によって基本料金が変更する  
+    options = [a3_1,a3_2,a3_3,a3_4,a3_5] # 選択肢のリスト
+
+    selection = input("介護度を入力してください: ")
+
+    # 入力された値が有効な選択肢の範囲内かチェック
+    if selection.isdigit() and 1 <= int(selection) <= len(options):
+        selected_number = int(selection)
+        selected_option = int(options[selected_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+        
+
+
+    options_eating=['300', '390', '650', '1735']
+    bl = input('負担限度額を入力してください')
+    
+     # 入力された値が有効な選択肢の範囲内かチェック
+    if bl.isdigit() and 1 <= int(bl) <= len(options_eating):
+        bl_number = int(bl)
+        bl_option = int(options_eating[bl_number - 1])
+    else:
+        print("無効な入力です。正しく入力してください。")
+        
+
+    bllive = bl
+    options_living=['820', '820', '1310', '2415']
+    if bllive.isdigit() and 1 <= int(bllive) <= len(options_living):
+        bllive_number = int(bllive)
+        bllive_option = int(options_living[bllive_number - 1])
+    
+
+    ndy=int(input('計算したい年度'))
+    ndm=int(input('計算したい月'))
+    days=calendar.monthrange(ndy,ndm)[1]
+    
+bc_month=selected_option*days
+b_month=b*days
+c_month=c*days
+d_month=d*days
+f_month=f*days
+g_month=g*days
+h_month=h*days
+eating_month=bl_option*days
+living_month=bllive_option*days
+month_price = bc_month + b_month + c_month + d_month + e + f_month + g_month + h_month + eating_month + living_month
+
+print('%d年,%d月の料金は￥%d円です'%(ndy,ndm,month_price))
